@@ -3,6 +3,7 @@ class Ceu < Formula
   homepage "http://www.ceu-lang.org/"
   url "https://github.com/fsantanna/ceu.git", :tag => "v0.30"
   depends_on "lua"
+  depends_on "luarocks"
 
   resource "lpeg" do
     url "https://luarocks.org/manifests/gvvaughan/lpeg-1.0.1-1.src.rock", :using => :nounzip
