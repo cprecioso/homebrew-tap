@@ -8,11 +8,6 @@ class SwiftFormat < Formula
   version_scheme 1
   head "https://github.com/apple/swift-format.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "d8f72c33efc125e2904e1bec2c8942cca75d75cf81dcab7fcf08ba124af16170" => :catalina
-  end
-
   depends_on xcode: ["12"]
 
   def install
