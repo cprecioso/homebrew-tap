@@ -47,6 +47,5 @@ cask "esphome-device-builder" do
 
   on_linux do
     app_image artifact, target: "ESPHome Device Builder.AppImage"
-    binary "#{appimagedir}/ESPHome Device Builder.AppImage", target: "esphome-desktop"
   end
 end
