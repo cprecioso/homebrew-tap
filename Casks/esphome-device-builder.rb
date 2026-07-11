@@ -1,6 +1,3 @@
-# Documentation: https://docs.brew.sh/Cask-Cookbook
-#                https://docs.brew.sh/Adding-Software-to-Homebrew#cask-stanzas
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 cask "esphome-device-builder" do
   on_macos do
     arch arm: "aarch64", intel: "x64"
@@ -38,11 +35,10 @@ cask "esphome-device-builder" do
     app "ESPHome Device Builder.app"
     binary "#{appdir}/ESPHome Device Builder.app/Contents/MacOS/esphome-desktop"
 
-    zap quit:  "io.esphome.builder",
-        trash: [
-          "~/Library/Application Support/io.esphome.builder",
-          "~/Library/LaunchAgents/ESPHome Device Builder.plist",
-        ]
+    uninstall quit:  "io.esphome.builder",
+              trash: "~/Library/LaunchAgents/ESPHome Device Builder.plist"
+
+    zap trash: "~/Library/Application Support/io.esphome.builder"
   end
 
   on_linux do
