@@ -36,8 +36,9 @@ cask "esphome-device-builder" do
     depends_on macos: :catalina
 
     app "ESPHome Device Builder.app"
+    binary "#{appdir}/ESPHome Device Builder.app/Contents/MacOS/esphome-desktop"
 
-    zap quit: "io.esphome.builder",
+    zap quit:  "io.esphome.builder",
         trash: [
           "~/Library/Application Support/io.esphome.builder",
           "~/Library/LaunchAgents/ESPHome Device Builder.plist",
@@ -46,5 +47,6 @@ cask "esphome-device-builder" do
 
   on_linux do
     app_image artifact, target: "ESPHome Device Builder.AppImage"
+    binary "#{appimagedir}/ESPHome Device Builder.AppImage", target: "esphome-desktop"
   end
 end
